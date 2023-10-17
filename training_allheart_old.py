@@ -592,11 +592,9 @@ def main():
 
     fitted = dtesting.fit(xt, yt)
     dtesting.get_n_leaves()
-    sktrees.export_graphviz(fitted, out_file="testing_dot")
 
     clf = sktrees.DecisionTreeClassifier(random_state=100, ccp_alpha=ccp_alphas[-1])
     clf.fit(xt, yt)
-    sktrees.export_graphviz(fitted, out_file="testing_two")
 
     fig, ax = plt.subplots()
     ax.plot(ccp_alphas[:-1], impurities[:-1], marker="o", drawstyle="steps-post")
